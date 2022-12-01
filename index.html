@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://kit.fontawesome.com/5fb155f057.js" crossorigin="anonymous"></script>
+    <style>
+        
+        @font-face {
+            font-family: 'kanitlight';
+            src: url(font/kanit-light.otf);
+            font-weight: normal;
+            font-style: normal;
+
+
+        }
+        .home{
+            background-color: rgb(116, 88, 88);
+            
+            outline-color: black;
+            outline: 10;
+            padding: 50px;
+        }
+        .button {
+            border: none;
+            font-family: "kanitlight";
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            transform: scale(0.9);
+            transition: all 0.5s;
+            
+        }
+        .text
+        {
+            font-family: "kanitlight";
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-size: 14px;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+        .button:hover .text{
+            opacity: 1;
+        }
+        .button:hover{transform:translateY(-10px);opacity: 1;}
+        
+        
+    </style>
+
+    <h1 style="font-family: sans-serif;
+    font-size: 16px;font-weight: bold;  ">Website</h1>
+    <body>
+        <p style="text-align:center;">
+            <button class="button"><i class="fa-solid fa-house"></i><span class="text"><br>Home</span></button>
+            <button class="button"><i class="fa-solid fa-store"></i><span class="text"><br>Shop</span></button>
+            <button class="button"><i class="fa-solid fa-circle-question"></i><span class="text"><br>About</span></button>
+            
+        </p>
+        <p class="home">
+            <h1>Fully Realease!</h1>
+            <p></p>
+        </p>
+
+    </body>
+</html>
