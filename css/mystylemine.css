@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  @font-face {
+    font-family: 'p-light';
+    src: url(../font/Poppins-Light.ttf);
+    font-weight:normal;
+    font-style: normal;
+    
+
+  }
+  @font-face {
+      font-family: 'p-regular';
+      src: url(../font/Poppins-Regular.ttf);
+      font-weight:normal;
+      font-style: normal;
+      
+
+  }
+  @font-face {
+      font-family: 'p-semibold';
+      src: url(../font/Poppins-SemiBold.ttf);
+      font-weight:normal;
+      font-style: normal;
+      
+
+  }
+  @font-face {
+      font-family: 'p-medium';
+      src: url(../font/Poppins-Medium.ttf);
+      font-weight:normal;
+      font-style: normal;
+      
+
+  }
+  @font-face {
+      font-family: 'p-bold';
+      src: url(../font/Poppins-Bold.ttf);
+      font-weight:normal;
+      font-style: normal;
+  }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+  
+  /* Style the header */
+  header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+  }
+  
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+  /* Container for flexboxes */
+  section {
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  /* Style the navigation menu */
+  nav {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: rgb(36, 36, 36);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Style the list inside the menu */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  nav a{
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: "p-regular";
+    text-decoration: none;
+    color: white;
+    opacity: 0.5;
+    transition: all 0.5s;
+    position: relative;
+  }
+
+  nav a:after{
+    content: "";
+    transition: all 0.5s;
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+  }
+  nav a:hover::after{
+    transition: all 0.5s;
+    width: 100%;
+  }
+  /* Style the content */
+  article {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 1;
+    background-color: #f1f1f1;
+    color: black;
+    padding: 10px;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+    section {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+  }

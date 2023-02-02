@@ -1,29 +1,71 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/5fb155f057.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/mystyle.css">
+
+    <title>Site</title>
 
     <body>
-        <div class="section">
-            <h1 id="headtext" style="font-family: font-1;color: rgb(0, 0, 0);font-size: 3vw;opacity: 01;">Generete website source code with many templates.<br><br>Easier than you think.</h1>
-
-            <p style="font-family: p-light;color: rgb(0, 0, 0);font-size: 1vw;opacity: 01;"><br>Celebrate Christmas</p>
-
-        </div>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metusPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metusPellentesque
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
-
-        <div class="nav">
-            <a href="index.html">
-            <button class="nbutton">Home</button></a>
-            <a href="pricing.html">
-            <button class="nbutton">Pricing</button></a>
-            <a href="about.html">
-            <button class="nbutton">About</button></a>
-        </div>
-        <br>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="portfolio.html">Portfolio</a>
+        </nav>
         
+        <div class="recommend">
+            <div class="slideshow">
+                <div class="slide fade">
+                    <div class="number">1 / 2</div>
+                    <img src="Keep/second_candidate_m4_2566.jpg" style="width:100%">
+                    <div class="text">Caption Text</div>
+                </div>
+                
+                <div class="slide fade">
+                    <div class="number">2 / 2</div>
+                    <img src="Keep/candidate_m1_2566_second.jpg" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+              
+            </div>
+            <div style="display: flex;">
+                <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="next" onclick="plusDivs(1)">&#10095;
+            </div>
+            
+        </div>
 
+        <div class="head">
+            <br>
+            <h3>Footer</h3>
+            <br>
+                
+            <a href="index.html" class="customnav">Home</a> <br>
+            <a href="contact.html" class="customnav">Contact</a><br>
+            <a href="portfolio.html" class="customnav">Portfolio</a><br>
+            <p style="color:white;"><br>My school : <a href="http://www.pccpl.ac.th/" target="_blank" style="color:white;">Pcshs Pl</a></p> 
+            <br>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+            
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+            
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("slide");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+            </script>
     </body>
 </html>
