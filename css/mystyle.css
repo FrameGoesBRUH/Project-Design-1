@@ -2,7 +2,14 @@
     box-sizing: border-box;
     
   }
-  
+  @font-face {
+    font-family: 'thai';
+    src: url(../font/SB\ -\ Modern.ttf);
+    font-weight:normal;
+    font-style: normal;
+    
+
+  }
   @font-face {
     font-family: 'p-light';
     src: url(../font/Poppins-Light.ttf);
@@ -44,8 +51,14 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
+      background: rgb(201,218,218);
+      background: linear-gradient(0deg, rgba(201,218,218,1) 0%, rgba(255,255,255,1) 100%);
     }
   
+  h1{
+    font-family: "thai";
+  }
+
   /* Style the header */
   header {
     background-color: #666;
@@ -54,6 +67,11 @@
     font-size: 35px;
     color: white;
   }
+
+  .school{
+    height: 100%;
+  }
+
   /* Container for flexboxes */
   section {
     display: -webkit-flex;
@@ -94,17 +112,30 @@
 
   
   .recommend{
-    height: 100%;
-    width: 80%;
-    
+    height: 720px;
+    width: 100%;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 5%;
+  }
+
+  .slideshow{
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease;
+    display: flex;
   }
 
   .slide {
-    display: none;
-    height: 100%;
-    width: 100%;
+    min-width: 100%;
+    
+    text-align: center;
+  }
+
+  .slide img{
+    height: auto;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 5px 5px 20px rgba(0,0,0, 0.3);
   }
 
   .prev, .next {
@@ -113,9 +144,9 @@
     width: 50%;
     height: 10%;
     color: rgb(0, 0, 0);
-    background-color: #ffffff;
+    background-color:transparent;
     border: 0;
-    
+    margin-top: 20px;
     text-decoration: none;
     font-weight: bold;
     font-size: 15px;
@@ -130,8 +161,7 @@
   
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-    color: white;
+    font-size: 20px;
   }
   
   /* Caption text */
@@ -174,6 +204,32 @@
     animation-duration: 1.5s;
   }
   
+  .content{
+    
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5em;
+  
+  }
+
+  .content img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0, 0.5);
+    transition: all 0.3s;
+  }
+
+  .content img:hover{
+
+    transform: translateY(-10px);
+    opacity: 0.5;
+  }
+  
+
   @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
@@ -181,6 +237,9 @@
   
   /* On smaller screens, decrease text size */
   @media only screen and (max-width: 600px) {
-    .prev, .next,.text {font-size: 8px}
     .recommend{width: 95%;}
+    .content{
+      grid-template-columns: 1fr;
+      width: 95%;
+    }
   }

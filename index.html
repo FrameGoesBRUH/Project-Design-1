@@ -14,28 +14,38 @@
             <a href="portfolio.html">Portfolio</a>
         </nav>
         
+        <div class="school">
+            
+        </div>
+
         <div class="recommend">
             <div class="slideshow">
-                <div class="slide fade">
+                <div class="slide">
                     <div class="number">1 / 2</div>
-                    <img src="Keep/second_candidate_m4_2566.jpg" style="width:100%">
-                    <div class="text">Caption Text</div>
+                    <img src="Keep/second_candidate_m4_2566.jpg" >
                 </div>
-                
-                <div class="slide fade">
+                <div class="slide">
                     <div class="number">2 / 2</div>
-                    <img src="Keep/candidate_m1_2566_second.jpg" style="width:100%">
-                    <div class="text">Caption Two</div>
+                    <img src="Keep/candidate_m1_2566_second.jpg">
                 </div>
               
             </div>
+
             <div style="display: flex;">
-                <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
-                <button class="next" onclick="plusDivs(1)">&#10095;
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;
             </div>
             
         </div>
 
+
+        <h1 style="text-align: center;font-size: 60px;margin-top: 5%;">แสดงความยินดี</h1>
+        <div class="content">
+                <img src="Keep/tysf01.jpg">
+                <img src="Keep/tysf02.jpg">
+                <img src="Keep/tysf03.jpg">
+                <img src="Keep/tysf04.jpg">
+            </div>
         <div class="head">
             <br>
             <h3>Footer</h3>
@@ -49,23 +59,29 @@
         </div>
 
         <script>
-            var slideIndex = 1;
-            showDivs(slideIndex);
-            
-            function plusDivs(n) {
-              showDivs(slideIndex += n);
-            }
-            
-            function showDivs(n) {
-              var i;
-              var x = document.getElementsByClassName("slide");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              x[slideIndex-1].style.display = "block";  
-            }
-            </script>
+            const prev = document.querySelector(".prev");
+            const next = document.querySelector(".next");
+            const slider = document.querySelector(".slideshow");
+            const slide = document.querySelector(".slide");
+            const imgs = document.querySelectorAll(".slide img");
+            let index = 0;
+            let width = slide.clientWidth;
+            let posx = 0
+
+            next.addEventListener("click", ()=>{
+                index++;
+                
+                posx = posx + (-index * width * 1.25);
+                console.log(posx);
+                slider.style.transform = "translateX("+ ((-index * width)) +"px)";
+            });
+            prev.addEventListener("click", ()=>{
+                index--;
+                posx = posx + (index * width * 1.25);
+                console.log(posx);
+                slider.style.transform = "translateX("+ ((-index * width)) +"px)";
+            });
+
+        </script>
     </body>
 </html>
