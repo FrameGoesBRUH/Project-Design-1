@@ -22,10 +22,12 @@
             <div class="slideshow">
                 <div class="slide">
                     <div class="number">1 / 2</div>
+                    <div class="descripe">Click to see full image</div>
                     <img src="Keep/second_candidate_m4_2566.jpg" >
                 </div>
                 <div class="slide">
                     <div class="number">2 / 2</div>
+                    
                     <img src="Keep/candidate_m1_2566_second.jpg">
                 </div>
               
@@ -41,11 +43,30 @@
 
         <h1 style="text-align: center;font-size: 60px;margin-top: 5%;">แสดงความยินดี</h1>
         <div class="content">
+            <div>
                 <img src="Keep/tysf01.jpg">
-                <img src="Keep/tysf02.jpg">
-                <img src="Keep/tysf03.jpg">
-                <img src="Keep/tysf04.jpg">
+                <a id="descripe">Click to see full image</a>
             </div>
+            <div>
+                <img src="Keep/tysf02.jpg">
+                <a id="descripe">Click to see full image</a>
+            </div>
+            <div>
+                <img src="Keep/tysf03.jpg">
+                <a id="descripe">Click to see full image</a>
+            </div>
+            <div>
+                <img src="Keep/tysf04.jpg" onclick="fullimg(4)">
+                <a id="descripe">Click to see full image</a>
+            </div>
+        </div>
+        <div class="fullimg">
+            <img src="Keep/tysf01.jpg" id="1">
+            <img src="Keep/tysf02.jpg" id="2">
+            <img src="Keep/tysf03.jpg" id="3">
+            <img src="Keep/tysf04.jpg" id="4">
+        </div>
+
         <div class="head">
             <br>
             <h3>Footer</h3>
@@ -63,6 +84,7 @@
             const next = document.querySelector(".next");
             const slider = document.querySelector(".slideshow");
             const slide = document.querySelector(".slide");
+            const fullimgcontainer = document.querySelector(".fullimg");
             const imgs = document.querySelectorAll(".slide img");
             let index = 0;
             let width = slide.clientWidth;
@@ -81,6 +103,14 @@
                 console.log(posx);
                 slider.style.transform = "translateX("+ ((-index * width)) +"px)";
             });
+
+            function fullimg(countorder) {
+                let element = document.getElementById(countorder);
+                element.style = "display:block";
+                element.style.transition = "all 0.4s ease"
+                element.style.opacity = 1;
+            }
+
 
         </script>
     </body>
