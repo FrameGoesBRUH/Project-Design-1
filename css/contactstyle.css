@@ -1,0 +1,155 @@
+*{
+    box-sizing: border-box;
+    
+  }
+  @font-face {
+    font-family: 'thai';
+    src: url(../font/SB\ -\ Modern.ttf);
+    font-weight:normal;
+    font-style: normal;
+    
+
+  }
+  @font-face {
+    font-family: 'p-light';
+    src: url(../font/Poppins-Light.ttf);
+    font-weight:normal;
+    font-style: normal;
+    
+
+  }
+  @font-face {
+      font-family: 'p-regular';
+      src: url(../font/Poppins-Regular.ttf);
+      font-weight:normal;
+      font-style: normal;
+      
+
+  }
+  @font-face {
+      font-family: 'p-semibold';
+      src: url(../font/Poppins-SemiBold.ttf);
+      font-weight:normal;
+      font-style: normal;
+      
+
+  }
+  @font-face {
+      font-family: 'p-medium';
+      src: url(../font/Poppins-Medium.ttf);
+      font-weight:normal;
+      font-style: normal;
+      
+
+  }
+  @font-face {
+      font-family: 'p-bold';
+      src: url(../font/Poppins-Bold.ttf);
+      font-weight:normal;
+      font-style: normal;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+    /* Style the navigation menu */
+  nav {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: rgb(36, 36, 36);
+    height: 50px;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    position: fixed;
+    top:0;
+    transition: all 0.5s;
+    z-index: 9999999;
+  }
+    
+    /* Style the list inside the menu */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav a{
+    padding: 0 2%;
+    font-family: "p-regular";
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+    transition: all 0.5s;
+    position: relative;
+  }
+  
+  nav a:hover{
+    color: rgb(0, 191, 255);
+  }
+
+  .tagcont{
+    width: 100%;
+    justify-content: center;
+    margin-top: 10%;
+    display: flex;
+
+  }
+
+
+  .tagcont img{
+    width: 25%;
+    border-radius: 10px;
+    top: 0;
+    margin: auto;
+    position: relative;
+    transition: all 0.5s;
+    
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .fullimg{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    position: fixed;
+    top: 100%;
+    transition: all 0.5s;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .fullimg img{
+    display: none;
+    top: 0;
+    margin-top: 2%;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px rgba(0,0,0, 1);
+    transition: all 0.4s;
+    margin: auto;
+  }
+
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+  }
+  @keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+  }
+  
+  @media only screen and (max-width: 600px) {
+
+    .tagcont{display: block;margin-top: 20%;text-align: center;}
+
+    .tagcont img{
+      margin: auto;
+      width: 80%;
+      margin-top: 10%;
+    }
+  }
