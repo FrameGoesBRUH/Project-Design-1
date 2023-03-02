@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/contactstyle.css">
+    <script src="https://kit.fontawesome.com/5fb155f057.js" crossorigin="anonymous"></script>
 
     <title>Site</title>
 
@@ -14,49 +15,103 @@
             <a href="portfolio.html">Portfolio</a>
         </nav>
         <div class="" id="blackbg" style="background-color: black;opacity: 0;position: fixed;top: 0;pointer-events: none;width: 100%;height: 100%;z-index: 1;"></div> 
-        
+        <h1 id="head">Contact</h1>
+
         <div style="z-index: 100;" class="tagcont">
             <img src="Keep/วิทย์_มหาพันธ์.jpg" onclick="fullimg(0)" id="0">
-            <img src="Keep/wanchai.jpg" onclick="fullimg(1)"id="1">
-            <img src="Keep/frameinsea.jpg" onclick="fullimg(2)"id="2">
+            <img src="Keep/wanchai.jpg" onclick="fullimg(1)" id="1">
+            <img src="Keep/frameinsea.jpg" onclick="fullimg(2)" id="2">
         </div>
-        <div style="z-index: 110;" class="fullimg">
-            <img src="Keep/วิทย์_มหาพันธ์.jpg" id="f0">
+        <div class="info" id="n2">
+            <p><i class="fa-solid fa-user"></i> Nachaphon Boonwangrae</p>
+            <p><i class="fa-solid fa-envelope"></i> nachaphon.boo@pccpl.ac.th</p>
+            <p><i class="fa-solid fa-phone"></i> 0826217358</p>
+            <p><i class="fa-solid fa-graduation-cap"></i> 1/1_02</p>
+        </div>
+        <div class="info" id="n0">
+            <p><i class="fa-solid fa-user"></i> Mahaphan Jantakun</p>
+            <p><i class="fa-solid fa-school"></i> Teacher</p>
+        </div>
+        <div class="info" id="n1">
+            <p><i class="fa-solid fa-user"></i> Wanchai</p>
+            <p><i class="fa-solid fa-school"></i> School Director</p>
+        </div>
+        
+        
+        <div class="minfo">
+            <img src="Keep/frameinsea.jpg" id="mobile">
+            <div>
+                <p><i class="fa-solid fa-user"></i> Nachaphon Boonwangrae</p>
+                <p><i class="fa-solid fa-envelope"></i> nachaphon.boo@pccpl.ac.th</p>
+                <p><i class="fa-solid fa-phone"></i> 0826217358</p>
+                <p><i class="fa-solid fa-graduation-cap"></i> 1/1_02</p>
+            </div>
+            
         </div>
 
         <script>
             let bg = document.getElementById("blackbg");
-            const fullimgcontainer = document.querySelector(".fullimg");
-
+            const tag = document.querySelector(".tagcont");
             const nav = document.querySelector("nav");
+            const h = document.getElementById("head");
             let counto = 0;
+            let same = true;
 
-            function fullimg(countorder) {
-                let element = document.getElementById("f"+countorder);
-                let element2 = document.getElementById(countorder);
-                element2.style.top = -90+"vh";
-                bg.style.pointerEvents = "fill";
+            function fullimg(n) {
+                let nn = document.getElementById(n);
+                let inf = document.getElementById("n"+n);
+                if (n != counto){
+                    let last = document.getElementById(counto);
+                    let lastinf = document.getElementById("n"+counto);
+                    last.style.width = 25 + "%";
+                    lastinf.style.opacity = 0;
+                    inf.style.opacity = 1;
+                    nn.style.width = 30 + "%";
+                    tag.style.top = -100+"px";
+                    head.style.opacity = 0;
+                    bg.style.pointerEvents = "fill";
+                    counto = n;
+                    nav.style.top = -10+"%"
+                }
+                else{
+                    if (same == false){
+                        nav.style.top = 0;
+                        inf.style.opacity = 0;
+                        nn.style.width = 25 + "%";
+                        bg.style.pointerEvents = "none";
+                        tag.style.top = 0;
+                        head.style.opacity = 1;
+                        nav.style.top = 0;
+                        bg.style.pointerEvents = "none";
+                        same = true
+                    }
+                    else{
+                        nn.style.width = 30 + "%";
+                        inf.style.opacity = 1;
+                        tag.style.top = -100+"px";
+                        bg.style.pointerEvents = "fill";
+                        counto = n;
+                        head.style.opacity = 0;
+                        nav.style.top = -10+"%"
+                        same = false
+                    }
+                    
+                }
                 
-                nav.style.top = -10+"%"
-                element.style = "display:block";
-                element.style.opacity = 1;
-                fullimgcontainer.style.top = 0;
+                
             }
 
             bg.addEventListener("click",()=>{
-                let element = document.getElementById("f"+counto);
-                let element2 = document.getElementById(counto);
+                let nn = document.getElementById(counto);
+                let lastinf = document.getElementById("n"+counto);
                 nav.style.top = 0;
+                lastinf.style.opacity = 0;
+                nn.style.width = 25 + "%";
                 bg.style.pointerEvents = "none";
-                element2.style.top = 0;
-                element.style.opacity = 0;
-                fullimgcontainer.style.top = 100 + "%";
-                element.style = "display:none";
+                tag.style.top = 0;
                 nav.style.top = 0;
                 bg.style.pointerEvents = "none";
             });
-            
-            
 
         </script>
     </body>
